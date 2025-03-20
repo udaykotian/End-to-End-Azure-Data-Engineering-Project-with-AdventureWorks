@@ -1,7 +1,7 @@
 # End-to-End Azure Data Engineering Project with AdventureWorks
 
 ## Overview
-This repository contains a comprehensive end-to-end Azure Data Engineering project that demonstrates the full lifecycle of a modern data pipeline using Microsoft Azure services. The project leverages the AdventureWorks dataset to perform data ingestion, storage, transformation, loading, reporting, and end-to-end pipeline testing. Additionally, it incorporates security and governance best practices using Azure Active Directory (AAD). 
+This repository contains a comprehensive end-to-end Azure Data Engineering project that demonstrates the full lifecycle of a modern data pipeline using Microsoft Azure services. The project leverages the AdventureWorks dataset to perform data ingestion, storage, transformation, loading, reporting, and end-to-end pipeline testing. Additionally, it incorporates security and governance best practices using Microsoft Entra ID. 
 
 ### Tools and Technologies Used
 - **Azure Data Factory (ADF)**: For data ingestion and pipeline orchestration.
@@ -9,7 +9,7 @@ This repository contains a comprehensive end-to-end Azure Data Engineering proje
 - **Azure Databricks**: For data transformation (Bronze to Silver, Silver to Gold).
 - **Azure Synapse Analytics**: For data loading and creating a serverless SQL database (`gold_db`).
 - **Power BI**: For data reporting and visualization (`SalesAnalysis.pbix`).
-- **Azure Active Directory (AAD)**: For security and governance (security group setup).
+- **Microsoft Entra ID**: For security and governance (security group setup).
 - **Azure Key Vault**: For securely storing credentials.
 - **Azure Virtual Machines (VMs)**: For running Windows-based tools (e.g., Power BI Desktop, Self-hosted Integration Runtime).
 
@@ -160,7 +160,7 @@ The project follows a Lakehouse architecture with the following flow:
 - **Outcome**: Part 5 completed with an enhanced report exceeding the minimum requirements.
 
 #### Security and Governance Setup
-- **Objective**: Implement security best practices using Azure Active Directory.
+- **Objective**: Implement security best practices using Microsoft Entra ID.
 - **Steps**:
   - Created a security group (`DataEngineerGroup`) in AAD.
   - Set `sumathi.ko@...` as the owner and member (no secondary account available).
