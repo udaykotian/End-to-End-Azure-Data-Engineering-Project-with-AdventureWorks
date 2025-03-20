@@ -37,14 +37,14 @@ The project follows a Lakehouse architecture with the following flow:
     ```sql
     USE AdventureWorksLT2017
     GO
-    CREATE LOGIN MrK WITH PASSWORD = 'password';
+    CREATE LOGIN MrK WITH #### = '####';
     GO
     CREATE USER MrK FOR LOGIN MrK;
     GO
     ALTER ROLE db_datareader ADD MEMBER MrK;
     GO
     ```
-  - Stored the credentials in Azure Key Vault as secrets (`username: MrK`, `password`).
+  - Stored the credentials in Azure Key Vault as secrets (`username: MrK`, `####`).
 - **Outcome**: Environment setup completed with all necessary Azure resources and data source prepared.
 
 #### Part 2: Data Ingestion
@@ -133,7 +133,7 @@ The project follows a Lakehouse architecture with the following flow:
     - Image: Windows 10 Pro - x64 Gen2.
     - Size: Standard_B2s (2 vCPUs, 4 GB RAM).
     - Username: `adminuser`.
-    - Password: `P@ssw0rd123!`.
+    - ####: `P@ssw0rd123!`.
   - **Challenges**:
     - Spending limit error: Resolved by removing the spending limit in Azure Account Center.
     - VM size/region error: Used Standard_B2s after trying smaller sizes.
