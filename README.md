@@ -1,7 +1,7 @@
 # End-to-End Azure Data Engineering Project with AdventureWorks
 
 ## Overview
-This repository contains a comprehensive end-to-end Azure Data Engineering project that demonstrates the full lifecycle of a modern data pipeline using Microsoft Azure services. The project leverages the AdventureWorks dataset to perform data ingestion, storage, transformation, loading, reporting, and end-to-end pipeline testing. Additionally, it incorporates security and governance best practices using Azure Active Directory (AAD). The project was completed using a trial Azure account (`sumathi.ko@...`) with limited resources (e.g., 4-6 vCPUs), and since the user was on a Mac, Azure VMs were used for Windows-based tools like Power BI Desktop.
+This repository contains a comprehensive end-to-end Azure Data Engineering project that demonstrates the full lifecycle of a modern data pipeline using Microsoft Azure services. The project leverages the AdventureWorks dataset to perform data ingestion, storage, transformation, loading, reporting, and end-to-end pipeline testing. Additionally, it incorporates security and governance best practices using Azure Active Directory (AAD). 
 
 ### Tools and Technologies Used
 - **Azure Data Factory (ADF)**: For data ingestion and pipeline orchestration.
