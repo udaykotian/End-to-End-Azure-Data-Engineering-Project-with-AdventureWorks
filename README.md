@@ -37,7 +37,7 @@ The project follows a Lakehouse architecture with the following flow:
     ```sql
     USE AdventureWorksLT2017
     GO
-    CREATE LOGIN MrK WITH PASSWORD = 'your_password_here';
+    CREATE LOGIN MrK WITH PASSWORD = 'password';
     GO
     CREATE USER MrK FOR LOGIN MrK;
     GO
