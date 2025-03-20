@@ -31,7 +31,7 @@ The project follows a Lakehouse architecture with the following flow:
 - **Objective**: Set up the Azure environment and prepare the data source.
 - **Steps**:
   - Created a resource group (`rg-mrk-talks-tech-data-eng`) in East US 2.
-  - Created Azure resources: ADF, ADLS Gen2 (`adlsmrktalkstech`), Databricks (`sumathi-kotian-cluster-2`), Synapse Analytics (`syn-mrk-talks-tech`), and Key Vault.
+  - Created Azure resources: ADF, ADLS Gen2 (`adlsmrktalkstech`), Databricks (`udaya-kotian-cluster-2`), Synapse Analytics (`syn-mrk-talks-tech`), and Key Vault.
   - Set up the AdventureWorks database using SQL Server Management Studio (SSMS) by following the Microsoft guide: [AdventureWorks Installation](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms).
   - Created a login (`MrK`) and user for the AdventureWorks database with the `db_datareader` role using the script `create_login.sql`:
     ```sql
@@ -62,7 +62,7 @@ The project follows a Lakehouse architecture with the following flow:
 #### Part 3: Data Transformation
 - **Objective**: Transform data from Bronze to Silver (cleaning) and Silver to Gold (final transformations) using Databricks.
 - **Steps**:
-  - Set up a Databricks cluster (`sumathi-kotian-cluster-2`, 4 vCPUs, 14 GB RAM).
+  - Set up a Databricks cluster (`udaya-kotian-cluster-2`, 4 vCPUs, 14 GB RAM).
   - Created two notebooks:
     - `bronze_to_silver.py`: Cleaned data (e.g., date formatting for `OrderDate`).
     - `silver_to_gold.py`: Renamed columns (e.g., `SalesOrderID` to `Sales_Order_ID`).
@@ -163,7 +163,7 @@ The project follows a Lakehouse architecture with the following flow:
 - **Objective**: Implement security best practices using Microsoft Entra ID.
 - **Steps**:
   - Created a security group (`DataEngineerGroup`) in AAD.
-  - Set `sumathi.ko@...` as the owner and member (no secondary account available).
+  - Set `udaya.ko@...` as the owner and member (no secondary account available).
   - Assigned the Contributor role to `DataEngineerGroup` for `rg-mrk-talks-tech-data-eng`.
   - Skipped testing with a secondary account due to lack of one.
 - **Outcome**: Security group setup completed, aligning with real-time project best practices.
