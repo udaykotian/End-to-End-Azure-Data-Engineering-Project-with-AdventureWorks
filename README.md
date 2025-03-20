@@ -27,7 +27,7 @@ The project follows a Lakehouse architecture with the following flow:
 
 ### Project Parts
 
-password Part 1: Environment Setup
+#### Part 1: Environment Setup
 - **Objective**: Set up the Azure environment and prepare the data source.
 - **Steps**:
   - Created a resource group (`rg-mrk-talks-tech-data-eng`) in East US 2.
@@ -37,17 +37,17 @@ password Part 1: Environment Setup
     ```sql
     USE AdventureWorksLT2017
     GO
-    CREATE LOGIN MrK WITH password = 'password';
+    CREATE LOGIN MrK WITH #### = '####';
     GO
     CREATE USER MrK FOR LOGIN MrK;
     GO
     ALTER ROLE db_datareader ADD MEMBER MrK;
     GO
     ```
-  - Stored the credentials in Azure Key Vault as secrets (`username: MrK`, `password`).
+  - Stored the credentials in Azure Key Vault as secrets (`username: MrK`, `####`).
 - **Outcome**: Environment setup completed with all necessary Azure resources and data source prepared.
 
-password Part 2: Data Ingestion
+#### Part 2: Data Ingestion
 - **Objective**: Ingest AdventureWorks data into the Bronze layer using ADF.
 - **Steps**:
   - Installed a Self-hosted Integration Runtime (SHIR) named `SHIR` on a VM (`sqlvm-mrk-talks-tech`, Windows Server 2019, 2 vCPUs) to connect ADF to the on-premises SQL Server.
@@ -59,7 +59,7 @@ password Part 2: Data Ingestion
 - **Outcome**: Successfully ingested tables (`Address`, `Customer`, `SalesOrderHeader`, `SalesOrderDetail`, `Product`, `ProductCategory`, etc.) into the Bronze layer.
 - **Challenges**: None encountered in this part.
 
-password Part 3: Data Transformation
+#### Part 3: Data Transformation
 - **Objective**: Transform data from Bronze to Silver (cleaning) and Silver to Gold (final transformations) using Databricks.
 - **Steps**:
   - Set up a Databricks cluster (`udaya-kotian-cluster-2`, 4 vCPUs, 14 GB RAM).
@@ -78,7 +78,7 @@ password Part 3: Data Transformation
   - **Multiple Files in Silver Layer**: Multiple files appeared in `silver/SalesLT/` due to repeated pipeline runs with `.mode("overwrite")`. Suggested using `VACUUM` and `OPTIMIZE` to clean up and compact files, but this was optional and skipped.
 - **Outcome**: Data was transformed and stored in the Silver and Gold layers. Transformations (e.g., column renaming) were verified in Part 6.
 
-password Part 4: Data Loading
+#### Part 4: Data Loading
 - **Objective**: Load Gold layer data into Azure Synapse Analytics and create views.
 - **Steps**:
   - Granted the Synapse workspace (`syn-mrk-talks-tech`) the `Storage Blob Data Contributor` role on `adlsmrktalkstech`.
@@ -110,7 +110,7 @@ password Part 4: Data Loading
 - **Outcome**: All views were created in `gold_db`, and data was accessible for reporting.
 - **Challenges**: None encountered.
 
-password Part 5: Data Reporting
+#### Part 5: Data Reporting
 - **Objective**: Create a Power BI report (`SalesAnalysis.pbix`) with visuals like Total Customers and Sales by Product Category.
 - **Initial Attempt: Power BI Desktop on Existing VM**:
   - **VM Setup**: Used `sqlvm-mrk-talks-tech` (Windows Server 2019, 2 vCPUs).
@@ -133,7 +133,7 @@ password Part 5: Data Reporting
     - Image: Windows 10 Pro - x64 Gen2.
     - Size: Standard_B2s (2 vCPUs, 4 GB RAM).
     - Username: `adminuser`.
-    - password: `P@ssw0rd123!`.
+    - ####: `P@ssw0rd123!`.
   - **Challenges**:
     - Spending limit error: Resolved by removing the spending limit in Azure Account Center.
     - VM size/region error: Used Standard_B2s after trying smaller sizes.
@@ -159,7 +159,7 @@ password Part 5: Data Reporting
 
 - **Outcome**: Part 5 completed with an enhanced report exceeding the minimum requirements.
 
-password Security and Governance Setup
+#### Security and Governance Setup
 - **Objective**: Implement security best practices using Microsoft Entra ID.
 - **Steps**:
   - Created a security group (`DataEngineerGroup`) in AAD.
@@ -168,7 +168,7 @@ password Security and Governance Setup
   - Skipped testing with a secondary account due to lack of one.
 - **Outcome**: Security group setup completed, aligning with real-time project best practices.
 
-password Part 6: End-to-End Pipeline Testing
+#### Part 6: End-to-End Pipeline Testing
 - **Objective**: Automate the pipeline, add new data, and verify updates in Power BI.
 - **Steps**:
   - **Create Scheduled Trigger**:
