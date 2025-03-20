@@ -1,0 +1,2 @@
+# End-to-End-Azure-Data-Engineering-Project-with-AdventureWorks
+A comprehensive end-to-end Azure Data Engineering project that demonstrates data ingestion, storage, transformation, loading, reporting, and pipeline testing using modern Azure tools (ADF, ADLS Gen2, Databricks, Synapse Analytics, Power BI) with the AdventureWorks dataset. Includes security and governance setup with Azure Active Directory.
