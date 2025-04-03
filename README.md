@@ -1,7 +1,7 @@
-# End-to-End Azure Data Engineering Project with AdventureWorks
+# Azure Cloud Migration: End-to-End Data Engineering Project
 
 ## Overview
-This repository contains a comprehensive end-to-end Azure Data Engineering project that demonstrates the full lifecycle of a modern data pipeline using Microsoft Azure services. The project leverages the AdventureWorks dataset to perform data ingestion, storage, transformation, loading, reporting, and end-to-end pipeline testing. Additionally, it incorporates security and governance best practices using Microsoft Entra ID. 
+This project showcases the migration of on-premises data to Azure, delivering a comprehensive end-to-end data engineering solution. I built a cloud-based pipeline that ingests data into Azure Data Lake Storage Gen2 (Bronze layer) using Azure Data Factory, transforms it with Databricks (Silver and Gold layers), and loads it into Azure Synapse Analytics for querying. For reporting, I developed interactive visualizations in Power BI, connecting to the Synapse database to provide actionable insights. The pipeline is fully automated with scheduled triggers, secured with Microsoft Entra ID for access control and Azure Key Vault for credential management, and tested with new data to ensure scalability and reliability. This implementation follows a Lakehouse architecture, demonstrating expertise in cloud migration, data transformation, and business intelligence.
 
 ### Tools and Technologies Used
 - **Azure Data Factory (ADF)**: For data ingestion and pipeline orchestration.
